@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Publication
 
 
@@ -16,6 +16,11 @@ class PublicationCreateView(CreateView):
     model = Publication
     template_name = "publication-create.html"
     fields = ['title', 'body', 'author']
+
+class PublicationUpdateView(UpdateView):
+    model = Publication
+    template_name = "publication-update.html"
+    fields = ['title', 'body']
     
 
     
